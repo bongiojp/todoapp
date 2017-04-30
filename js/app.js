@@ -6,6 +6,7 @@ var addTodo = function() {
     var todoText = todoInput.value;
     todos.push(todoText);
     todoInput.value = '';
+    displayNewTodo();
 }
 
 var displayNewTodo = function() {
@@ -19,21 +20,21 @@ var displayNewTodo = function() {
     appendOptionButtons(todoIndex, newTodo);
 }
 
-var appendOptionButtons = function() {
+var appendOptionButtons = function(index, newTodo) {
     var deleteButton = document.createElement('button');
     deleteButton.innerHTML = 'x';
     deleteButton.onclick = function() {
 	removeTodo(index);
     }
 
-    var editButton = document.createElement('');
+    var editButton = document.createElement('button');
     editButton.innerHTML = 'edit';
     editButton.onclick = function() {
 	addEditField(index);
     }
 
-    todo.appendChild(deleteButton);
-    todo.appendChild(editButton);
+    newTodo.appendChild(deleteButton);
+    newTodo.appendChild(editButton);
 }
 
 var removeTodo = function(index) {
@@ -42,7 +43,7 @@ var removeTodo = function(index) {
     todoList.removeChild(toDoToRemove);
 }
 
-var addEditField(index) {
+var addEditField = function(index) {
     var toDoToChange = document.getElementById('' + index + '');
     var editInput = document.createElement('input');
     editInput.type = 'text';
@@ -60,7 +61,7 @@ var addEditField(index) {
     toDoToChange.appendChild(editButton);
 }
 
-var updateTodo(index) {
+var updateTodo = function(index) {
     var editInput = document.getElementById('edit' + index + '');
     var updatedTodo = editInput.value;
 
