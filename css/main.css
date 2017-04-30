@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url('../img/bg-image.jpg');
+    background-size: cover;
+}
+
+.content {
+    width: 100%;
+}
+
+.content div {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    margin: 2px;
+}
